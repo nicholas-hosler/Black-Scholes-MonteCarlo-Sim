@@ -2,15 +2,7 @@
 
 library(tidyverse)
 
-
-
-
-
 scores <- 
-  
-  
-
-  
   ngames_sim <- crossing(trials = 1:10000, 
          ngames = 12 * 2 ^ (0:7)) %>%         
   unnest(game = map(ngames, seq_len)) %>% 
@@ -31,8 +23,6 @@ scores <-
     scale_y_continuous(labels = scales::percent_format())+
     labs(x = "# of games",
          y = "Probability better player wins")
-
-
 
 
   scores %>% 
